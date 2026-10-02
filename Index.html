@@ -1,685 +1,179 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gavin Watson | Finance & Operations Portfolio</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            rutgers: '#cc0033',
-            navy: {
-              800: '#0B192C',
-              900: '#001F3F',
-              950: '#030D1B',
-            },
-            slate: {
-              850: '#1e293b',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin Watson | Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
         }
-      }
-    }
-  </script>
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #0284C7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-    .custom-shadow {
-      box-shadow: 0 10px 30px -5px rgba(0, 31, 63, 0.08);
-    }
-  </style>
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <!-- Logo / Name -->
-        <a href="#" class="flex items-center gap-2 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-navy-900 via-blue-800 to-blue-600 text-white font-bold flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-            GW
-          </div>
-          <div>
-            <span class="font-bold text-slate-900 tracking-tight text-lg block leading-none">Gavin Watson</span>
-            <span class="text-xs text-slate-500 font-medium">Rutgers Finance '27</span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
-          <a href="#about" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Personal Statement</a>
-          <a href="#skills" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Skills</a>
-          <a href="#projects" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Projects</a>
-          <a href="#experience" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Experience</a>
-          <a href="#education" class="px-3 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition">Education</a>
-        </nav>
-
-        <!-- Action Button & Mobile Menu Toggle -->
-        <div class="flex items-center gap-3">
-          <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-navy-900 hover:bg-blue-800 rounded-lg shadow-sm transition">
-            Contact Me
-          </a>
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
-            <i class="fa-solid fa-bars text-xl"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-1">
-      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Personal Statement</a>
-      <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Skills</a>
-      <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Projects</a>
-      <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Experience</a>
-      <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-100">Education</a>
-      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50 hover:bg-blue-100">Contact Me</a>
-    </div>
-  </header>
-
-  <section class="relative bg-gradient-to-b from-slate-900 via-navy-900 to-slate-900 text-white pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
-    <!-- Background Decor -->
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        
-        <!-- Left Text Info -->
-        <div class="md:col-span-8 text-center md:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Rutgers University Finance Major
-          </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
-            Gavin Watson
-          </h1>
-          <p class="text-xl sm:text-2xl font-light text-slate-300 mb-6 max-w-2xl">
-            Procurement Operations | Financial & Data Analysis | Strategic Sourcing
-          </p>
-
-          <!-- Contact Quick Info -->
-          <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300 mb-8">
-            <span class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700/60">
-              <i class="fa-solid fa-location-dot text-blue-400"></i> Pennsville, NJ
-            </span>
-            <a href="mailto:Gavinlwatson23@yahoo.com" class="flex items-center gap-2 bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700/60 transition">
-              <i class="fa-solid fa-envelope text-blue-400"></i> Gavinlwatson23@yahoo.com
-            </a>
-            <a href="tel:8568391470" class="flex items-center gap-2 bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700/60 transition">
-              <i class="fa-solid fa-phone text-blue-400"></i> 856-839-1470
-            </a>
-          </div>
-
-          <!-- Hero Call to Action Buttons -->
-          <div class="flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="mailto:Gavinlwatson23@yahoo.com" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2">
-              <i class="fa-solid fa-paper-plane"></i> Email Me
-            </a>
-            <button onclick="copyToClipboard('Gavinlwatson23@yahoo.com', 'Email copied!')" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold rounded-xl transition flex items-center gap-2">
-              <i class="fa-regular fa-copy"></i> Copy Contact Info
-            </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white rounded-xl transition flex items-center gap-2">
-              <i class="fa-brands fa-github text-lg"></i> GitHub
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Avatar / Visual Icon Card -->
-        <div class="md:col-span-4 flex justify-center">
-          <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl bg-gradient-to-tr from-blue-600 to-slate-800 p-1 shadow-2xl">
-            <div class="w-full h-full bg-slate-900 rounded-[14px] flex flex-col items-center justify-center text-center p-6 relative overflow-hidden group">
-              <div class="w-24 h-24 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-4xl mb-3 border border-blue-400/30">
-                <i class="fa-solid fa-user-tie"></i>
-              </div>
-              <span class="text-white font-bold text-lg">Gavin Watson</span>
-              <span class="text-blue-400 text-xs font-semibold mt-1">B.S. Finance (2027)</span>
-              <div class="mt-3 flex items-center gap-2 text-slate-400 text-xs">
-                <i class="fa-solid fa-building-columns"></i> Rutgers University
-              </div>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-900 tracking-tight">Gavin Watson</a>
+            <div class="space-x-6 text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
             </div>
-          </div>
         </div>
+    </nav>
 
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-    <div class="bg-white rounded-2xl p-6 sm:p-10 custom-shadow border border-blue-100">
-      <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-        <div class="p-4 rounded-2xl bg-blue-50 text-blue-600 shrink-0 border border-blue-100">
-          <i class="fa-solid fa-quote-left text-3xl"></i>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/80 px-2.5 py-0.5 rounded-md">
-              Personal Statement
-            </span>
-            <span class="text-xs text-slate-400">• Grading Rubric Section 1</span>
-          </div>
-          <blockquote class="text-lg sm:text-xl font-semibold text-slate-900 leading-relaxed italic">
-            "Driven Finance student at Rutgers University with hands-on procurement and operations experience, skilled in data analysis, cross-functional collaboration, and strategic business management."
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Core Competencies</h2>
-      <h3 class="text-3xl font-extrabold text-slate-900">Skills Showcase</h3>
-      <p class="text-slate-600 mt-2 text-sm sm:text-base">
-        A tailored collection of technical proficiencies, strategic tools, and proven leadership qualities.
-      </p>
-
-      <!-- Interactive Skill Filter -->
-      <div class="flex flex-wrap justify-center gap-2 mt-6" id="skill-filters">
-        <button onclick="filterSkills('all')" class="skill-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-navy-900 text-white shadow-sm transition">All Skills</button>
-        <button onclick="filterSkills('business')" class="skill-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300 transition">Technical & Business</button>
-        <button onclick="filterSkills('tech')" class="skill-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300 transition">Tools & Tech</button>
-        <button onclick="filterSkills('soft')" class="skill-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-700 hover:bg-slate-300 transition">Soft Skills & Leadership</button>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="skills-grid">
-      <!-- Technical & Business Skills -->
-      <div class="skill-card business bg-white p-6 rounded-2xl border border-slate-200/80 custom-shadow hover:border-blue-300 transition">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold mb-4">
-          <i class="fa-solid fa-chart-pie"></i>
-        </div>
-        <h4 class="text-lg font-bold text-slate-900 mb-3">Technical & Business Skills</h4>
-        <ul class="space-y-2.5 text-sm text-slate-600">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Procurement Operations</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Supply Chain Management</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Financial & Operational Data Analysis</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Vendor Communications</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Strategic Sourcing</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i> Project Management</li>
-        </ul>
-      </div>
-
-      <!-- Tools & Technologies -->
-      <div class="skill-card tech bg-white p-6 rounded-2xl border border-slate-200/80 custom-shadow hover:border-blue-300 transition">
-        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
-          <i class="fa-solid fa-laptop-code"></i>
-        </div>
-        <h4 class="text-lg font-bold text-slate-900 mb-3">Tools & Technologies</h4>
-        <ul class="space-y-2.5 text-sm text-slate-600">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Microsoft Excel (Data Analysis)</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Microsoft Access</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Microsoft Word</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> HTML / Web Development</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Data Analytics & Reporting</li>
-        </ul>
-      </div>
-
-      <!-- Soft Skills & Leadership -->
-      <div class="skill-card soft bg-white p-6 rounded-2xl border border-slate-200/80 custom-shadow hover:border-blue-300 transition">
-        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
-          <i class="fa-solid fa-users-gear"></i>
-        </div>
-        <h4 class="text-lg font-bold text-slate-900 mb-3">Leadership & Soft Skills</h4>
-        <ul class="space-y-2.5 text-sm text-slate-600">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-xs"></i> Cross-Functional Teamwork</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-xs"></i> Leadership & Mentorship</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-xs"></i> Public Speaking & Presentations</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-xs"></i> Strategic Planning</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-500 text-xs"></i> Customer Relationship Management</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="py-16 bg-slate-100/70 border-y border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Practical Applications</h2>
-        <h3 class="text-3xl font-extrabold text-slate-900">Featured Projects & Initiatives</h3>
-        <p class="text-slate-600 mt-2 text-sm sm:text-base">
-          Real-world experience showcasing analytical precision, leadership, and operational management.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Project 1: PSEG -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 custom-shadow flex flex-col justify-between hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="bg-gradient-to-r from-blue-900 to-navy-900 p-6 text-white">
-              <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/30 rounded-md border border-blue-400/30 text-blue-200">
-                Procurement & Supply Chain
-              </span>
-              <h4 class="text-xl font-bold mt-3 leading-snug">Procurement Efficiency & Vendor Analysis</h4>
-              <p class="text-xs text-slate-300 mt-1">PSEG Internship Initiative</p>
+    <!-- Header / Hero Section -->
+    <header class="bg-blue-900 text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Gavin Watson</h1>
+            <p class="text-lg text-blue-200 font-medium">Finance Student at Rutgers University | Pennsville, NJ</p>
+            
+            <div class="flex justify-center items-center space-x-6 text-sm text-blue-100 pt-2">
+                <a href="mailto:Gavinlwatson23@yahoo.com" class="hover:underline flex items-center gap-1">
+                    ✉️ Gavinlwatson23@yahoo.com
+                </a>
+                <span>|</span>
+                <span>📞 856-839-1470</span>
             </div>
-            <div class="p-6">
-              <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                Analyzed operational and procurement data to identify efficiency opportunities, track deliverables, and support strategic sourcing initiatives at PSEG.
-              </p>
-              <div class="mb-4">
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Key Highlights</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Vendor Communications</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Purchase Order Processing</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Cross-Functional Collaboration</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+
+        <!-- 1. Personal Statement Section -->
+        <section id="about" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <h2 class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-2">Personal Statement</h2>
+            <div class="border-l-4 border-blue-600 pl-4 py-1">
+                <blockquote class="text-xl font-medium text-gray-900 italic">
+                    "Driven Rutgers Finance major with hands-on experience in procurement operations and cross-functional leadership, dedicated to optimizing business efficiency and strategic sourcing."
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- 2. Skills Showcase Section -->
+        <section id="skills" class="space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+                <h2 class="text-2xl font-bold text-gray-900">Skills & Competencies</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Technical & Software Skills -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-4 flex items-center gap-2">
+                        💻 Technical & Software
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 font-medium rounded-full text-sm">HTML</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 font-medium rounded-full text-sm">Microsoft Word</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 font-medium rounded-full text-sm">Microsoft Access</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 font-medium rounded-full text-sm">Data Analysis</span>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 border-t border-slate-100 mt-auto flex flex-col gap-2">
-            <button onclick="openModal('pseg-modal')" class="w-full text-center py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-solid fa-file-lines mr-1"></i> View Documentation / Case Study
-            </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-brands fa-github mr-1"></i> GitHub Repository
-            </a>
-          </div>
-        </div>
 
-        <!-- Project 2: FBLA -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 custom-shadow flex flex-col justify-between hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="bg-gradient-to-r from-slate-900 to-blue-900 p-6 text-white">
-              <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/30 rounded-md border border-blue-400/30 text-blue-200">
-                Leadership & Outreach
-              </span>
-              <h4 class="text-xl font-bold mt-3 leading-snug">FBLA Leadership & Business Sponsorships</h4>
-              <p class="text-xs text-slate-300 mt-1">Presidential Initiative</p>
-            </div>
-            <div class="p-6">
-              <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                Led a team of 20+ members to foster professional growth, organizing business workshops and forming strategic partnerships with local businesses to secure sponsorships and internships.
-              </p>
-              <div class="mb-4">
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Key Highlights</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Team Leadership</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Partnership Outreach</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Event Operations</span>
+                <!-- Professional & Business Skills -->
+                <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-4 flex items-center gap-2">
+                        📊 Business & Leadership
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-50 text-green-700 font-medium rounded-full text-sm">Procurement Operations</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 font-medium rounded-full text-sm">Strategic Sourcing</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 font-medium rounded-full text-sm">Vendor Communication</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 font-medium rounded-full text-sm">Team Leadership</span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="p-6 pt-0 border-t border-slate-100 mt-auto flex flex-col gap-2">
-            <button onclick="openModal('fbla-modal')" class="w-full text-center py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-solid fa-file-lines mr-1"></i> View Program Overview
-            </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-brands fa-github mr-1"></i> GitHub Repository
-            </a>
-          </div>
-        </div>
+        </section>
 
-        <!-- Project 3: The Shipyard -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 custom-shadow flex flex-col justify-between hover:-translate-y-1 transition duration-300">
-          <div>
-            <div class="bg-gradient-to-r from-blue-950 to-slate-800 p-6 text-white">
-              <span class="text-xs font-semibold px-2.5 py-1 bg-blue-500/30 rounded-md border border-blue-400/30 text-blue-200">
-                Operations & Logistics
-              </span>
-              <h4 class="text-xl font-bold mt-3 leading-snug">Inventory & Service Operations System</h4>
-              <p class="text-xs text-slate-300 mt-1">The Shipyard Hospitality Operations</p>
+        <!-- 3. Projects Showcase Section -->
+        <section id="projects" class="space-y-6">
+            <div class="border-b border-gray-200 pb-2">
+                <h2 class="text-2xl font-bold text-gray-900">Featured Projects & Experience</h2>
             </div>
-            <div class="p-6">
-              <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                Developed and maintained high-volume inventory tracking and customer workflow systems during seasonal operations at The Shipyard to enhance speed of service and efficiency.
-              </p>
-              <div class="mb-4">
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Key Highlights</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Inventory Control</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Customer Experience</span>
-                  <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">High-Volume Logistics</span>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">Procurement</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-2">PSEG Operations Optimization</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Analyzed operational and procurement data to identify efficiency opportunities, manage purchase orders, and support strategic sourcing initiatives.
+                        </p>
+                    </div>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                        View Details / Repo &rarr;
+                    </a>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 border-t border-slate-100 mt-auto flex flex-col gap-2">
-            <button onclick="openModal('shipyard-modal')" class="w-full text-center py-2 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-solid fa-file-lines mr-1"></i> View Project Details
-            </button>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition">
-              <i class="fa-brands fa-github mr-1"></i> GitHub Repository
-            </a>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      
-      <!-- Professional Experience Column -->
-      <div class="lg:col-span-7">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="p-3 bg-blue-600 text-white rounded-xl shadow-sm">
-            <i class="fa-solid fa-briefcase text-xl"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-slate-900">Professional Experience</h3>
-            <p class="text-xs text-slate-500">Career journey and operational leadership roles</p>
-          </div>
-        </div>
-
-        <div class="relative border-l-2 border-slate-200 ml-4 space-y-8">
-          
-          <!-- PSEG -->
-          <div class="relative pl-6">
-            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></span>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 custom-shadow">
-              <div class="flex flex-wrap justify-between items-start mb-2">
-                <div>
-                  <h4 class="font-bold text-slate-900 text-lg">Procurement Operations Intern</h4>
-                  <p class="text-blue-600 text-sm font-semibold">PSEG</p>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">Leadership</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-2">FBLA Community & Business Program</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Led 20+ members as President, organizing workshops and forming local business partnerships for internship sponsorships and public speaking mentorship.
+                        </p>
+                    </div>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                        View Details / Repo &rarr;
+                    </a>
                 </div>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">
-                  Aug 2026
-                </span>
-              </div>
-              <ul class="list-disc list-inside text-sm text-slate-600 space-y-1.5 mt-3">
-                <li>Supported daily procurement and supply chain operations, assisting with vendor communications, purchase order processing, and tracking deliverables.</li>
-                <li>Analyzed operational and procurement data to identify efficiency opportunities and support strategic sourcing initiatives.</li>
-                <li>Collaborated cross-functionally with internal teams and suppliers to ensure timely fulfillment and compliance with organizational standards.</li>
-              </ul>
-            </div>
-          </div>
 
-          <!-- FBLA -->
-          <div class="relative pl-6">
-            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 border-4 border-white"></span>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 custom-shadow">
-              <div class="flex flex-wrap justify-between items-start mb-2">
-                <div>
-                  <h4 class="font-bold text-slate-900 text-lg">President</h4>
-                  <p class="text-blue-600 text-sm font-semibold">Future Business Leaders of America (FBLA) Club</p>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded">Operations</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-2">The Shipyard Hospitality Operations</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Streamlined inventory management and high-volume customer service operations, improving overall service efficiency and guest satisfaction.
+                        </p>
+                    </div>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                        View Details / Repo &rarr;
+                    </a>
                 </div>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">
-                  Sep 2022 – Jun 2023
-                </span>
-              </div>
-              <ul class="list-disc list-inside text-sm text-slate-600 space-y-1.5 mt-3">
-                <li>Fostered professional growth by mentoring members in public speaking, business planning, and leadership.</li>
-                <li>Built partnerships with local businesses to create internship opportunities and sponsorships.</li>
-                <li>Led a team of 20+ members, organizing meetings, events, and workshops to promote leadership and business skills.</li>
-              </ul>
+
             </div>
-          </div>
+        </section>
 
-          <!-- The Shipyard -->
-          <div class="relative pl-6">
-            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 border-4 border-white"></span>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 custom-shadow">
-              <div class="flex flex-wrap justify-between items-start mb-2">
-                <div>
-                  <h4 class="font-bold text-slate-900 text-lg">Seasonal Bar Support & Operations</h4>
-                  <p class="text-blue-600 text-sm font-semibold">The Shipyard | Pennsville, NJ</p>
-                </div>
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">
-                  Seasonal 2024 – 2025
-                </span>
-              </div>
-              <ul class="list-disc list-inside text-sm text-slate-600 space-y-1.5 mt-3">
-                <li>Supported bartending staff in a high-volume bar environment by managing inventory, maintaining cleanliness, and providing exceptional customer service.</li>
-                <li>Interacted with customers to ensure positive guest experiences and efficient workflow during peak operational hours.</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Education & Coursework Column -->
-      <div class="lg:col-span-5" id="education">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="p-3 bg-navy-900 text-white rounded-xl shadow-sm">
-            <i class="fa-solid fa-graduation-cap text-xl"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-slate-900">Education</h3>
-            <p class="text-xs text-slate-500">Academic background and coursework</p>
-          </div>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 custom-shadow mb-6">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-red-100 text-rutgers font-bold flex items-center justify-center text-lg">
-              RU
-            </div>
+        <!-- Education Summary Section -->
+        <section class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm space-y-3">
+            <h2 class="text-xl font-bold text-gray-900">Education</h2>
             <div>
-              <h4 class="text-lg font-bold text-slate-900">Rutgers University</h4>
-              <p class="text-xs text-slate-500">New Brunswick, NJ</p>
+                <div class="flex justify-between items-baseline">
+                    <h3 class="font-bold text-gray-800">Rutgers University – New Brunswick</h3>
+                    <span class="text-sm text-gray-500">Expected Graduation: May 2027</span>
+                </div>
+                <p class="text-sm text-gray-600">Bachelor of Science in Finance | GPA: 3.1 / 4.00</p>
             </div>
-          </div>
+        </section>
 
-          <div class="border-t border-b border-slate-100 py-3 my-3 space-y-2 text-sm">
-            <div class="flex justify-between">
-              <span class="text-slate-500">Degree:</span>
-              <span class="font-semibold text-slate-800">Bachelor of Science in Finance</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-500">Expected Graduation:</span>
-              <span class="font-semibold text-slate-800">May 2027</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-slate-500">GPA:</span>
-              <span class="font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">3.1 / 4.00</span>
-            </div>
-          </div>
-
-          <div class="mt-4">
-            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Relevant Coursework</h5>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Financial Management</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Financial Accounting</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Managerial Accounting</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Macroeconomics</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Microeconomics</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Statistics for Business</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Supply Chain Management</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Marketing</span>
-              <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 font-medium rounded-md">Entrepreneurship</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Personal Interests -->
-        <div class="bg-gradient-to-br from-slate-900 to-navy-900 text-white p-6 rounded-2xl custom-shadow">
-          <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-3">Interests & Activities</h4>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <span class="px-3 py-1.5 bg-slate-800/80 rounded-lg border border-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-dumbbell text-blue-400"></i> Weightlifting</span>
-            <span class="px-3 py-1.5 bg-slate-800/80 rounded-lg border border-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-person-hiking text-emerald-400"></i> Hiking</span>
-            <span class="px-3 py-1.5 bg-slate-800/80 rounded-lg border border-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-football text-emerald-400"></i> Philadelphia Eagles</span>
-            <span class="px-3 py-1.5 bg-slate-800/80 rounded-lg border border-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-baseball text-red-400"></i> Philadelphia Phillies</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <footer id="contact" class="bg-navy-950 text-white pt-16 pb-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-12 border-b border-slate-800">
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-sm">
-              GW
-            </div>
-            <span class="font-bold text-lg">Gavin Watson</span>
-          </div>
-          <p class="text-slate-400 text-sm max-w-md mb-6">
-            Seeking opportunities in Procurement, Supply Chain Operations, and Financial Management. Open to networking and strategic career inquiries.
-          </p>
-          <div class="space-y-2 text-sm text-slate-300">
-            <p><i class="fa-solid fa-envelope text-blue-400 mr-2"></i> Gavinlwatson23@yahoo.com</p>
-            <p><i class="fa-solid fa-phone text-blue-400 mr-2"></i> 856-839-1470</p>
-            <p><i class="fa-solid fa-location-dot text-blue-400 mr-2"></i> Pennsville, NJ</p>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-lg font-bold mb-4">Get In Touch</h4>
-          <form onsubmit="handleFormSubmit(event)" class="space-y-3">
+        <!-- Contact Section -->
+        <section id="contact" class="bg-blue-50 p-8 rounded-xl text-center space-y-4">
+            <h2 class="text-2xl font-bold text-blue-900">Get In Touch</h2>
+            <p class="text-gray-600 text-sm max-w-md mx-auto">
+                Interested in connecting or learning more about my work? Feel free to reach out directly via email.
+            </p>
             <div>
-              <input type="text" placeholder="Your Name" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                <a href="mailto:Gavinlwatson23@yahoo.com" class="inline-block bg-blue-600 text-white font-medium px-6 py-2.5 rounded-lg shadow hover:bg-blue-700 transition-colors">
+                    Send Email
+                </a>
             </div>
-            <div>
-              <input type="email" placeholder="Your Email" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
-            </div>
-            <div>
-              <textarea rows="3" placeholder="Your Message..." required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"></textarea>
-            </div>
-            <button type="submit" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-lg transition shadow-md">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
+        </section>
 
-      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-        <p>© 2026 Gavin Watson. All rights reserved.</p>
-        <p>Built for GitHub Pages Deployment | Rutgers University</p>
-      </div>
-    </div>
-  </footer>
+    </main>
 
-  <!-- Modals -->
-  <div id="pseg-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 custom-shadow relative">
-      <button onclick="closeModal('pseg-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">PSEG Internship Case Study</h3>
-      <p class="text-sm text-slate-600 mb-4">
-        Detailed breakdown of data analysis, vendor interaction, purchase order flows, and cost efficiency initiatives conducted during procurement operations at PSEG.
-      </p>
-      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2 mb-4">
-        <p><strong>Role:</strong> Procurement Operations Intern</p>
-        <p><strong>Tools:</strong> Excel, Data Analytics, Access</p>
-        <p><strong>Outcome:</strong> Enhanced supply fulfillment tracking and internal vendor coordination.</p>
-      </div>
-      <button onclick="closeModal('pseg-modal')" class="w-full py-2 bg-navy-900 text-white text-xs font-semibold rounded-lg">Close Overview</button>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Gavin Watson. All rights reserved.</p>
+    </footer>
 
-  <div id="fbla-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 custom-shadow relative">
-      <button onclick="closeModal('fbla-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">FBLA Leadership Overview</h3>
-      <p class="text-sm text-slate-600 mb-4">
-        An overview of organizational leadership, partner business outreach, public speaking workshops, and team mentorship during presidency.
-      </p>
-      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2 mb-4">
-        <p><strong>Team Size:</strong> 20+ High School Members</p>
-        <p><strong>Key Achievement:</strong> Secured internships and sponsorships with local businesses.</p>
-      </div>
-      <button onclick="closeModal('fbla-modal')" class="w-full py-2 bg-navy-900 text-white text-xs font-semibold rounded-lg">Close Overview</button>
-    </div>
-  </div>
-
-  <div id="shipyard-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 custom-shadow relative">
-      <button onclick="closeModal('shipyard-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">The Shipyard Service & Inventory Operations</h3>
-      <p class="text-sm text-slate-600 mb-4">
-        Operational breakdown of high-volume seasonal inventory management, fast customer response workflows, and stock tracking.
-      </p>
-      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-2 mb-4">
-        <p><strong>Environment:</strong> High-Volume Hospitality & Bar Support</p>
-        <p><strong>Focus:</strong> Inventory control, efficiency, customer satisfaction.</p>
-      </div>
-      <button onclick="closeModal('shipyard-modal')" class="w-full py-2 bg-navy-900 text-white text-xs font-semibold rounded-lg">Close Overview</button>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs font-medium px-4 py-3 rounded-xl shadow-xl border border-slate-700 transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
-    <i class="fa-solid fa-circle-check text-emerald-400"></i>
-    <span id="toast-message">Notification</span>
-  </div>
-
-  <script>
-    // Mobile Navigation Toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Copy to Clipboard Helper
-    function copyToClipboard(text, message) {
-      const el = document.createElement('textarea');
-      el.value = text;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-      showToast(message);
-    }
-
-    // Toast Notification Display
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toast-message');
-      toastMsg.innerText = msg;
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
-
-      setTimeout(() => {
-        toast.classList.remove('translate-y-0', 'opacity-100');
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 3000);
-    }
-
-    // Skill Filter Logic
-    function filterSkills(category) {
-      const cards = document.querySelectorAll('.skill-card');
-      const filterBtns = document.querySelectorAll('.skill-filter-btn');
-
-      filterBtns.forEach(btn => {
-        btn.classList.remove('bg-navy-900', 'text-white');
-        btn.classList.add('bg-slate-200', 'text-slate-700');
-      });
-
-      event.target.classList.remove('bg-slate-200', 'text-slate-700');
-      event.target.classList.add('bg-navy-900', 'text-white');
-
-      cards.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+</body>
+</html>
